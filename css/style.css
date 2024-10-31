@@ -2,7 +2,7 @@
 
 .section-landing {
   min-height: 100vh;
-  background-image: url(../imgs/landing/03.jpg);
+  background-image: url('../imgs/landing/03.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
