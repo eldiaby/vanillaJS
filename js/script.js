@@ -17,7 +17,6 @@ const randomNumber = number => Math.floor(Math.random() * number);
 // Change the landing page background
 const changeLandingPageBackground = function () {
   setInterval(() => {
-    console.log('done')
     landingSection.style.backgroundImage = `url(../imgs/landing/0${randomNumber(5)}.jpg)`; 
   }, 10000);
   
