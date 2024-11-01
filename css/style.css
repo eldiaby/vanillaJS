@@ -1,3 +1,5 @@
+/* This is the main  styling file */
+
 /* Start landing page section styles */
 
 .section-landing {
@@ -83,5 +85,100 @@
 }
 
 /* End landing page section styles */
-/* ================================= */
+/* ======================================================================= */
+/* Start sittings section styles */
 
+.section-sittings {
+  position: fixed;
+  top: 0;
+  left: -20rem;
+  width: 20rem;
+  min-height: 100vh;
+  z-index: 100;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 1s ease-out;
+}
+
+.section-sittings.show {
+  left: 0;
+}
+
+.sittings-icon {
+  font-size: 2.4rem;
+  position: absolute;
+  top: 10rem;
+  right: 0;
+  padding: 0.4rem 1.2rem;
+  background-color: var(--main-color);
+  color: #fff;
+  transform: translateX(100%);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-spin {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.section-sittings {
+  padding: 1.2rem;
+}
+
+.sittings-option {
+  padding: 0.4rem;
+  background-color: #333;
+  text-align: center;
+}
+
+.sittings-option-heading {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.colors-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.colors-list li {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0.2rem;
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+.colors-list li.active {
+  opacity: 1;
+  border: 0.2rem #fff solid;
+}
+
+.color-orange {
+  background-color: #ff9800;
+}
+.color-red {
+  background-color: #e91e63;
+}
+.color-dark-green {
+  background-color: #009688;
+}
+.color-baby-blue {
+  background-color: #03a9f4;
+}
+.color-green {
+  background-color: #4caf50;
+}
+
+/* End sittings section styles */
+/* ======================================================================= */
+
+/* Start                      section styles */
+
+/* End                      section styles */
