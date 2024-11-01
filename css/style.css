@@ -178,6 +178,39 @@
 
 /* End sittings section styles */
 /* ======================================================================= */
+/* Start  about us  section styles */
+
+.section-about {
+  padding: 7.2rem 0;
+  background-color: #000;
+  min-height: 80vh;
+  background-image: url('../imgs/about.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.about-heading {
+  color: var(--main-color);
+  font-size: 3.2rem;
+}
+
+.about-description {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* End  about us  section styles */
+/* ======================================================================= */
 
 /* Start                      section styles */
 
