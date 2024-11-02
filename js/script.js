@@ -96,3 +96,15 @@ randomBtnsContainer.addEventListener('click', function (e) {
     changeLandingPageBackground(true);
   } else changeLandingPageBackground(false);
 });
+
+document.querySelector('.random-color').addEventListener('click', function () {
+  const randomColor = `
+  rgba( ${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
+  // Set the random color
+  document.documentElement.style.setProperty('--main-color', randomColor);
+  document
+    .querySelectorAll('.color')
+    .forEach((ele) => ele.classList.remove('active'));
+  localStorage.setItem('main-color', randomColor);
+  // console.log(randomColor);
+});
