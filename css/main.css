@@ -6,6 +6,7 @@
 
 :root {
   --main-color: #ff9800;
+  --section-padding: 6.4rem 0;
 }
 
 * {
@@ -46,4 +47,17 @@ body {
 
 .overlay span {
   display: none; /* For SEO */
+}
+
+/* Global sittings */
+
+.section-heading {
+  color: var(--main-color);
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.section-heading::first-letter {
+  text-transform: uppercase;
 }

@@ -7,6 +7,8 @@ const landingSection = document.querySelector('.section-landing');
 const sittingsIcon = document.querySelector('.sittings-icon');
 const colorsList = document.querySelector('.colors-list');
 const randomBtnsContainer = document.querySelector('.random-btns');
+
+const galleryContainer = document.querySelector('.gallery-images');
 // const landingSectionBackgroundImages = ['01.jgp', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 let randomeBackgroundInterval;
 
@@ -23,7 +25,7 @@ const changeLandingPageBackground = function (randomeBackground = true) {
       landingSection.style.backgroundImage = `url('../imgs/landing/0${randomNumber(
         6
       )}.jpg')`;
-    }, 1000);
+    }, 10000);
   } else clearInterval(randomeBackgroundInterval);
 };
 
@@ -107,4 +109,25 @@ document.querySelector('.random-color').addEventListener('click', function () {
     .forEach((ele) => ele.classList.remove('active'));
   localStorage.setItem('main-color', randomColor);
   // console.log(randomColor);
+});
+
+// Adding the modal functionality
+galleryContainer.addEventListener('click', function (e) {
+  const target = e.target.closest('img');
+
+  if (!target) return;
+
+  document.querySelector('.popup-box').innerHTML = `
+  ${target.alt !== null ? `<h3 class="modal-heading">${target.alt}</h3>` : ''}
+  <button class="modal-close-btn">X</button>
+              <img src="${
+                target.src
+              }" alt="Gallery image" title="Gallery image">
+  `;
+
+  document.querySelector('.gallery-popup-overlay').classList.add('show');
+
+  document.querySelector('.modal-close-btn').addEventListener('click', () => {
+    document.querySelector('.gallery-popup-overlay').classList.remove('show');
+  });
 });
