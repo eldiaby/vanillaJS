@@ -61,3 +61,10 @@ body {
 .section-heading::first-letter {
   text-transform: uppercase;
 }
+
+
+/* fix float */
+
+.clear-float {
+  clear: both;
+} 

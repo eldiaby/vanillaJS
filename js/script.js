@@ -8,7 +8,8 @@ const sittingsIcon = document.querySelector('.sittings-icon');
 const colorsList = document.querySelector('.colors-list');
 const randomBtnsContainer = document.querySelector('.random-btns');
 
-const galleryContainer = document.querySelector('.gallery-images');
+const skillsSection = document.querySelector('.section-skills');
+const gallerySection = document.querySelector('.section-gallery');
 // const landingSectionBackgroundImages = ['01.jgp', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 let randomeBackgroundInterval;
 
@@ -66,6 +67,32 @@ const checkMainColorLocalStorge = function () {
   });
 };
 
+// Function to animate progress bars
+function animateProgressBars() {
+    // Select all skill progress elements
+    document.querySelectorAll('.skill-progress').forEach(function(progressBar) {
+        const progress = progressBar.getAttribute('data-progress');
+        // Animate the width of the span inside each progress bar
+        const span = progressBar.querySelector('span');
+        span.style.width = progress + '%';
+    });
+}
+
+// Create an IntersectionObserver to trigger when the section enters the viewport
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // When the section is visible, animate the progress bars
+            animateProgressBars();
+            // Stop observing after the animation starts
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5 // Trigger when 50% of the section is visible
+});
+
+
 const initApp = function () {
   changeLandingPageBackground();
   checkMainColorLocalStorge();
@@ -112,22 +139,51 @@ document.querySelector('.random-color').addEventListener('click', function () {
 });
 
 // Adding the modal functionality
-galleryContainer.addEventListener('click', function (e) {
+gallerySection.addEventListener('click', function (e) {
   const target = e.target.closest('img');
 
   if (!target) return;
 
-  document.querySelector('.popup-box').innerHTML = `
+  gallerySection.insertAdjacentHTML(
+    'afterbegin',
+    `
+          <div class="gallery-popup-overlay">
+          <div class="popup-box">
   ${target.alt !== null ? `<h3 class="modal-heading">${target.alt}</h3>` : ''}
   <button class="modal-close-btn">X</button>
               <img src="${
                 target.src
               }" alt="Gallery image" title="Gallery image">
-  `;
+              </div>
+        </div>
+  `
+  );
 
   document.querySelector('.gallery-popup-overlay').classList.add('show');
 
   document.querySelector('.modal-close-btn').addEventListener('click', () => {
-    document.querySelector('.gallery-popup-overlay').classList.remove('show');
+    document.querySelector('.gallery-popup-overlay').remove();
   });
 });
+
+
+
+// ==============================================================================
+// Observe the section-skills
+observer.observe(skillsSection);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
