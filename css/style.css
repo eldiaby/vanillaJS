@@ -193,7 +193,7 @@
   align-items: center;
 }
 
-.random-btn {
+.sittings-btn {
   padding: 0.4rem 1.2rem;
   font-size: 1.4rem;
   cursor: pointer;
@@ -203,7 +203,7 @@
   color: #fff;
 }
 
-.random-btn:active {
+.sittings-btn:active {
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
   -ms-transform: scale(0.9);
@@ -211,7 +211,7 @@
   transform: scale(0.9);
 }
 
-.random-btn.active {
+.sittings-btn.active {
   border: 0.2rem #fff solid;
   opacity: 1;
 }

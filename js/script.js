@@ -12,6 +12,7 @@ const skillsSection = document.querySelector('.section-skills');
 const gallerySection = document.querySelector('.section-gallery');
 
 const bulletsContainer = document.querySelector('.nav-bullets');
+const navContainer = document.querySelector('.header-nav-menu');
 // const landingSectionBackgroundImages = ['01.jgp', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 let randomeBackgroundInterval;
 
@@ -123,6 +124,16 @@ function isSectionInView(section) {
   return rect.top <= window.innerHeight / 2 && rect.bottom >= 0;
 }
 
+const scrollToTop = function (e) {
+  e.preventDefault();
+  const target = e.target.closest('.header-nav-item') || e.target.closest('.nav-bullet-item');
+  if (!target) return;
+  const targetSection = document.querySelector(target.dataset.section);
+  targetSection.scrollIntoView({
+    behavior: 'smooth'
+  });
+  updateActiveBullet(target);
+}
 
 const initApp = function () {
   changeLandingPageBackground();
@@ -198,13 +209,12 @@ gallerySection.addEventListener('click', function (e) {
 });
 
 bulletsContainer.addEventListener('click', function (e) {
-  const target = e.target.closest('.nav-bullet-item');
-  if (!target) return;
-  const targetSection = document.querySelector(target.dataset.section);
-targetSection.scrollIntoView({
-      behavior: 'smooth'            
-    }); 
-  updateActiveBullet(target);
+scrollToTop(e)
+});
+
+// Nav menu scroll functionality
+navContainer.addEventListener('click', function (e) {
+scrollToTop(e)
 });
 
 // ==============================================================================
