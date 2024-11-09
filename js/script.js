@@ -10,6 +10,8 @@ const randomBtnsContainer = document.querySelector('.random-btns');
 
 const skillsSection = document.querySelector('.section-skills');
 const gallerySection = document.querySelector('.section-gallery');
+
+const bulletsContainer = document.querySelector('.nav-bullets');
 // const landingSectionBackgroundImages = ['01.jgp', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 let randomeBackgroundInterval;
 
@@ -93,6 +95,35 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 
 
+// Function to update active bullet state
+function updateActiveBullet(activeBullet) {
+  // Remove 'active' class from all bullets
+  bulletsContainer.querySelectorAll('.nav-bullet-item').forEach(bullet => {
+    bullet.classList.remove('active');
+  });
+
+  // Add 'active' class to the clicked bullet
+  activeBullet.classList.add('active');
+}
+
+// Optionally, update the active bullet based on scroll position
+window.addEventListener('scroll', () => {
+  // Check which section is currently in the viewport
+  document.querySelectorAll('.nav-bullet-item').forEach(bullet => {
+    const section = document.querySelector(bullet.getAttribute('data-section'));
+    if (isSectionInView(section)) {
+      updateActiveBullet(bullet);  // Update active class when the section is in view
+    }
+  });
+});
+
+// Helper function to check if a section is in the viewport
+function isSectionInView(section) {
+  const rect = section.getBoundingClientRect();
+  return rect.top <= window.innerHeight / 2 && rect.bottom >= 0;
+}
+
+
 const initApp = function () {
   changeLandingPageBackground();
   checkMainColorLocalStorge();
@@ -166,24 +197,16 @@ gallerySection.addEventListener('click', function (e) {
   });
 });
 
-
+bulletsContainer.addEventListener('click', function (e) {
+  const target = e.target.closest('.nav-bullet-item');
+  if (!target) return;
+  const targetSection = document.querySelector(target.dataset.section);
+targetSection.scrollIntoView({
+      behavior: 'smooth'            
+    }); 
+  updateActiveBullet(target);
+});
 
 // ==============================================================================
 // Observe the section-skills
 observer.observe(skillsSection);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

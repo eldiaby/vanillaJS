@@ -326,7 +326,7 @@
 }
 
 .gallery-popup-overlay.show {
-  z-index: 10;
+  z-index: 1000;
   opacity: 1;
 }
 
