@@ -227,3 +227,13 @@ resetSittingsBtn.addEventListener('click', function () {
 // ==============================================================================
 // Observe the section-skills
 observer.observe(skillsSection);
+
+
+// Nav menu close functionality
+document.querySelector('.header-nav-close').addEventListener('click', function () {
+  navContainer.classList.remove('active');
+});
+
+document.querySelector('.header-toggle-menu').addEventListener('click', function () {
+  navContainer.classList.toggle('active');
+});

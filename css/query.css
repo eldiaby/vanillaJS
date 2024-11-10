@@ -1,0 +1,56 @@
+/* Header nav styling for small screens 992px */
+@media screen and (max-width: 62em) {
+  .header-nav-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    /* transform: translateX(-100%); */
+  }
+  
+  .header-nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    color: var(--main-color);
+    margin-top: 0;
+    /* transform: translateX(0); */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .header-nav-menu.active li a {
+    color: var(--main-color);
+  }
+
+  .header-nav-menu.active .header-nav-close {
+    display: block;
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .header-nav-menu.active .header-nav-close:hover {
+    color: var(--main-color);
+  }
+
+  .header-toggle-menu {
+    display: block;
+  }
+
+  .header-toggle-menu.active .header-toggle-menu-icon {
+    display: none;
+  }
+}

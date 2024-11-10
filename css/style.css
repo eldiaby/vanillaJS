@@ -3,7 +3,6 @@
 /* Start landing page section styles */
 
 .section-landing {
-  min-height: 100vh;
   background-image: url('../imgs/landing/03.jpg');
   background-size: cover;
   background-position: center;
@@ -11,11 +10,16 @@
   transition: 1s ease;
 }
 
+.section-landing .container {
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
 /* Header styling  */
 
 .header {
   position: relative;
-  z-index: 2;
   color: #fff;
   display: flex;
   align-items: center;
@@ -32,6 +36,7 @@
 
 .header-nav {
   width: 100%;
+  text-align: right;
 }
 
 .header-nav-menu {
@@ -59,6 +64,27 @@
   color: var(--main-color);
 }
 
+.header-toggle-menu {
+  border: 0;
+  background-color: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.6s ease-in-out;
+  margin-left: auto;
+  margin-right: 1.8rem;
+}
+
+.header-nav-close,
+.header-toggle-menu {
+  display: none;
+}
+
+.header-toggle-menu:hover,
+.header-nav-close:hover {
+  color: var(--main-color);
+}
+
 /* introduction text styling  */
 
 .introduction-text {
@@ -66,7 +92,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
   text-align: center;
 }
 
