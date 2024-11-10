@@ -237,3 +237,7 @@ document.querySelector('.header-nav-close').addEventListener('click', function (
 document.querySelector('.header-toggle-menu').addEventListener('click', function () {
   navContainer.classList.toggle('active');
 });
+
+
+// Footer year functionality
+document.querySelector('.footer-year').textContent = new Date().getFullYear();

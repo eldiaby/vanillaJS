@@ -77,6 +77,18 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  
+.timeline-content-left,
+  .timeline-content-right  {
+    width: 100%;
+  }
+
+  .timeline-content-left::before,
+  .timeline-content-right::before,
+  .timeline-item .content::after {
+    display: none;
+  }
+
   .testimonials-items {
     flex-direction: column;
   }
