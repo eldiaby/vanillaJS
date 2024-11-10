@@ -1,3 +1,4 @@
+
 /* Header nav styling for small screens 992px */
 @media screen and (max-width: 62em) {
   .header-nav-menu {
@@ -52,5 +53,66 @@
 
   .header-toggle-menu.active .header-toggle-menu-icon {
     display: none;
+  }
+
+  .nav-bullets {
+    display: none;
+  }
+}
+
+
+/* screen size 672px */
+@media screen and (max-width: 42em) {
+
+  .header-logo {
+    font-size: 2.4rem;
+    width: 100%;
+  }
+
+  .header-nav {
+    width: 30rem;
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-items {
+    flex-direction: column;
+  }
+
+  .testimonial-item {
+    width: 100%;
+    margin-bottom: 1.8rem;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .user-massege textarea {
+    margin: 1.8rem auto 0.8rem;
+    min-height: 60vh;
+  }
+
+}
+
+/* screen size 480px */
+@media screen and (max-width: 30em) {
+  html {
+    font-size: 50%;
+  } 
+
+
+  .gallery-images {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .section-features .container {
+    flex-direction: column;
+  }
+
+  .feature-item {
+    width: 100%;
   }
 }
