@@ -13,6 +13,7 @@ const gallerySection = document.querySelector('.section-gallery');
 
 const bulletsContainer = document.querySelector('.nav-bullets');
 const navContainer = document.querySelector('.header-nav-menu');
+const resetSittingsBtn = document.querySelector('.reset-sittings');
 // const landingSectionBackgroundImages = ['01.jgp', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
 let randomeBackgroundInterval;
 
@@ -215,6 +216,12 @@ scrollToTop(e)
 // Nav menu scroll functionality
 navContainer.addEventListener('click', function (e) {
 scrollToTop(e)
+});
+
+// Reset settings functionality
+resetSittingsBtn.addEventListener('click', function () {
+  localStorage.clear();
+  location.reload();
 });
 
 // ==============================================================================

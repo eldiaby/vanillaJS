@@ -123,6 +123,11 @@
   }
 }
 
+.sittings-content {
+  position: relative;
+  min-height: 100vh;
+}
+
 .section-sittings {
   padding: 1.2rem;
 }
@@ -216,6 +221,33 @@
   opacity: 1;
 }
 
+.reset-sittings {
+  display: block;
+  margin: 1.8rem auto;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.8rem;
+  background-color: #f44336;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 1.2rem;
+
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+
+.reset-sittings:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
 /* End sittings section styles */
 /* ======================================================================= */
 /* Start  about us  section styles */
