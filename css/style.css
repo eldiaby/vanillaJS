@@ -674,6 +674,115 @@
 }
 /* End testimonials section styles */
 /* ======================================================================= */
+/* Start contact us section styles */
+.section-contact {
+  padding: var(--section-padding);
+  background-image: url('../imgs/contact.svg');
+  background-position: center;
+  background-size: cover;
+  /* min-height: 100vh; */
+}
+
+.section-contact > .container {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  padding: 1.8rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  gap: 1.8rem;
+}
+
+.form-container > div {
+  flex: 1;
+}
+
+.form-input {
+  margin-bottom: 1.8rem;
+  width: 100%;
+}
+
+.contact-form label {
+  display: block;
+  /* margin-bottom: 0.8rem; */
+  font-size: 1.8rem;
+}
+
+.contact-form label::after {
+  content: ':';
+}
+
+.form-input input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  caret-color: var(--main-color);
+  margin-bottom: 1.8rem;
+  /* height: 4.2rem; */
+}
+
+.form-input input:last-child,
+.form-input:last-child {
+  margin-bottom: 0;
+}
+
+.user-massege textarea {
+  width: 100%;
+  /* margin-bottom: 1.8rem; */
+  padding: 0.8rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  caret-color: var(--main-color);
+  resize: none;
+  height: 100%;
+}
+
+.form-input input:focus,
+.user-massege textarea:focus {
+  outline: 0.5rem solid var(--main-color);
+}
+
+.form-input input:focus::placeholder,
+.user-massege textarea:focus::placeholder {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.form-input input::placeholder,
+.user-massege textarea::placeholder {
+  color: #777;
+}
+
+.form-btn input {
+  display: block;
+  margin-left: auto;
+  /* width: 100%; */
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 0.4rem;
+  font-size: 1.8rem;
+  background-color: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-btn input:active {
+  transform: scale(0.9);
+}
+/* End contact us section styles */
+/* ======================================================================= */
 /* Start                             section styles */
 
 /* End                             section styles */
